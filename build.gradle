@@ -29,7 +29,7 @@ apply plugin: 'org.spongepowered.mixin'
 //  add sourceSets.main, "createindustry.refmap.json"
 //}
 
-version = '0.9.0c-1.19.2'
+version = '0.9.0c-1.18.2'
 group = 'com.drmangotea.createindustry' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'createindustry'
 
@@ -115,6 +115,11 @@ repositories {
         }
     }
     maven {
+        // Location of the maven that hosts JEI files (and TiC) [1.18.2]
+        name 'Progwml6 maven'
+        url 'https://dvs1.progwml6.com/files/maven'
+    }
+    maven {
         // location of the maven that hosts JEI files since January 2023
         // location of the maven for Vazkii's mods
         name = "Jared's maven"
@@ -140,20 +145,19 @@ dependencies {
    implementation fg.deobf("com.simibubi.create:create-${minecraft_version}:${create_version}:all") { transitive = false }
 
 
-    implementation fg.deobf("curse.maven:createaddition-439890:5070245")
-    implementation fg.deobf("curse.maven:zinclib-968773:5110339")
+    implementation fg.deobf("curse.maven:createaddition-439890:4683727")
+    //implementation fg.deobf("curse.maven:zinclib-968773:5110339")
 
-    implementation fg.deobf("curse.maven:mekanism-268560:4644795")
+    implementation fg.deobf("curse.maven:mekanism-268560:3875976")
 
-    implementation fg.deobf("curse.maven:selene-499980:4983974")
+    implementation fg.deobf("curse.maven:selene-499980:5660287")
 
-    implementation fg.deobf("curse.maven:spark-361579:4505309")
+    implementation fg.deobf("curse.maven:spark-361579:4505375")
 
     //implementation fg.deobf("curse.maven:create-steam-n-rails-688231:5246888")
 
-    compileOnly fg.deobf("mezz.jei:jei-${jei_minecraft_version}-common-api:${jei_version}")
-   compileOnly fg.deobf("mezz.jei:jei-${jei_minecraft_version}-forge-api:${jei_version}")
-   runtimeOnly fg.deobf("mezz.jei:jei-${jei_minecraft_version}-forge:${jei_version}")
+    compileOnly fg.deobf("mezz.jei:jei-${jei_minecraft_version}:${jei_version}:api")
+    runtimeOnly fg.deobf("mezz.jei:jei-${jei_minecraft_version}:${jei_version}")
 
 
 

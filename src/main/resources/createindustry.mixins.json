@@ -1,7 +1,6 @@
-
 {
   "required": true,
-  "minVersion": 0.8,
+  "minVersion": "0.8",
   "package": "com.drmangotea.createindustry.mixins",
   "compatibilityLevel": "JAVA_8",
   "refmap": "createindustry.refmap.json",
@@ -11,8 +10,7 @@
     "ArrowMixin",
     "BucketItemMixin",
     "FluidPipeBlockMixin",
-    "FluidPropagatorMixin",
-    "PipeAttachmentModelMixin"
+    "FluidPropagatorMixin"
   ],
   "injectors": {
     "defaultRequire": 1
