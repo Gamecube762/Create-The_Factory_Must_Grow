@@ -5,14 +5,12 @@ import com.drmangotea.tfmg.base.TFMGUtils;
 import com.drmangotea.tfmg.blocks.electricity.base.ElectricBlockEntity;
 import com.drmangotea.tfmg.recipes.polarizing.PolarizingRecipe;
 import com.drmangotea.tfmg.registry.TFMGBlockEntities;
-import com.drmangotea.tfmg.registry.TFMGItems;
 import com.drmangotea.tfmg.registry.TFMGRecipeTypes;
 import com.simibubi.create.content.equipment.goggles.IHaveGoggleInformation;
 import com.simibubi.create.content.processing.sequenced.SequencedAssemblyRecipe;
 import com.simibubi.create.foundation.item.SmartInventory;
 import com.simibubi.create.foundation.utility.Lang;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -98,7 +96,7 @@ public class PolarizerBlockEntity extends ElectricBlockEntity implements IHaveGo
                     timer++;
                 } else {
                     timer = -1;
-                    inventory.setStackInSlot(0, recipe.get().getResultItem(Minecraft.getInstance().level.registryAccess()));
+                    inventory.setStackInSlot(0, recipe.get().getResultItem(level.registryAccess()));
                     TFMGUtils.spawnElectricParticles(level,getBlockPos());
                     sendStuff();
                 }
